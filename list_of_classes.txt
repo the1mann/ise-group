@@ -1,0 +1,35 @@
+Bike
+ string model; 		/* model of bike */
+ int weight;		/* weight of bike */
+ int gears ;		/* number of gears on bike, 1 for track, upto 20 for road */
+ int gearRatio[gears];	/* array of gear ratios */
+ int mechanicalEfficiency; /* mech efficiency of bike */
+
+ 
+
+Cyclist
+ string firstName; 	/* Cyclist first name */
+ string lastName;  	/* Cyclist last name */
+ int height;	   	/* Cyclist height in cm */
+ int weight;		/* Cyclist weight in kg */
+ int v02max;		/* Cyclist maximal oxygen consumption */
+
+
+
+Event
+ string name;		/* Name of event */
+ int type;		/* different numbers represent different event type, eg 0 for track individual, 1 for track team, 2 for road individual, 3 for road team */
+ int raceDistance;	/* total race distance */
+ int altitude;		/* altitude in metres */
+ int temperature;	/* temperature in degrees Celsius */
+ int barometer;		/* barometric pressure in hPa */
+ int humidity;		/* humidity as percentage */
+ int riders;		/* number of participants in event */
+ Cyclist team[riders];	/* Array of Cyclists participating */
+ Bike bikeSetup[riders];/* Corresponding bike setups for each rider */
+
+
+Simulation
+
+
+Strategy
