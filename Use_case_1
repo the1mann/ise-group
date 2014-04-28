@@ -1,0 +1,7 @@
+Use case 1
+
+The coach is using the program for the very first time. 
+He will create a new cyclist and enter the cyclist's details.
+Then he will create a new bike, enter the details of the bike.
+Then he will create a new event, enter relevant details of taht event, select the cyclist and the bike he just created.
+Then the simulation is run and results can be viewed upon completion of the simulation.
