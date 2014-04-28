@@ -1,9 +1,9 @@
 Bike
  string model; 		/* model of bike */
- int weight;		/* weight of bike */
+ int weight;		/* weight of bike - grams should be sufficient*/
  int gears ;		/* number of gears on bike, 1 for track, upto 20 for road */
- int gearRatio[gears];	/* array of gear ratios */
- int mechanicalEfficiency; /* mech efficiency of bike */
+ float gearRatio[gears];	/* array of gear ratios */
+ float mechanicalEfficiency; /* mech efficiency of bike - percentage*/
 
  
 
@@ -14,22 +14,34 @@ Cyclist
  int weight;		/* Cyclist weight in kg */
  int v02max;		/* Cyclist maximal oxygen consumption */
 
+CyclistConfig
+ Cyclist cyclist;
+ Bike bike;
+
+Team
+ vector<CyclistConfig> members; /* Maximum size 9 - for a road cycling event */
+ string teamName;
 
 
 Event
  string name;		/* Name of event */
  int type;		/* different numbers represent different event type, eg 0 for track individual, 1 for track team, 2 for road individual, 3 for road team */
+ 	// Probably replace with an enum for best practice
  int raceDistance;	/* total race distance */
  int altitude;		/* altitude in metres */
  int temperature;	/* temperature in degrees Celsius */
  int barometer;		/* barometric pressure in hPa */
  int humidity;		/* humidity as percentage */
  int riders;		/* number of participants in event */
- Cyclist team[riders];	/* Array of Cyclists participating */
- Bike bikeSetup[riders];/* Corresponding bike setups for each rider */
 
 
 Simulation
-
+ Event event;
+ Team team;
+ Vector<strategy> strategy; /* List of strategies to run the simulation for */
+ enum mode; /* Would define the type of variations to run simulation for - whether the system tries just each different rider starting first for each strategy, or if it tries each of the O(factorial) potential orderings etc */
 
 Strategy
+ File input; /* CSV file of times between each rider swapping position or swapping from high speed to cruising speed for individual? */
+ enum type; /* Possibly support built in types as well, using parameter, e.g. could set to change every 30 seconds regardless without using an input file */
+ int parameter;
