@@ -1,10 +1,9 @@
 Bike
  string model; 		/* model of bike */
  int weight;		/* weight of bike - grams should be sufficient*/
- int gears ;		/* number of gears on bike, 1 for track, upto 20 for road */
+ int gears ;		/* number of gears on bike, 1 for track, up to 20 for road */
  float gearRatio[gears];	/* array of gear ratios */
  float mechanicalEfficiency; /* mech efficiency of bike - percentage*/
-
  
 
 Cyclist
@@ -14,9 +13,11 @@ Cyclist
  int weight;		/* Cyclist weight in kg */
  int v02max;		/* Cyclist maximal oxygen consumption */
 
+
 CyclistConfig
  Cyclist cyclist;
  Bike bike;
+
 
 Team
  vector<CyclistConfig> members; /* Maximum size 9 - for a road cycling event */
@@ -40,6 +41,7 @@ Simulation
  Team team;
  Vector<strategy> strategy; /* List of strategies to run the simulation for */
  enum mode; /* Would define the type of variations to run simulation for - whether the system tries just each different rider starting first for each strategy, or if it tries each of the O(factorial) potential orderings etc */
+
 
 Strategy
  File input; /* CSV file of times between each rider swapping position or swapping from high speed to cruising speed for individual? */
