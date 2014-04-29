@@ -1,0 +1,7 @@
+Pursuit Cycling with 4 people 
+The coach has an pursuit cycling event coming up in the next few weeks and he wants to work out the best strategy and order for the event
+
+- Creates 3 more cyclists (other is pre-existing)
+- Create a new bike 
+- Create the pursuit cycling event
+- Run the simulation randomly in order to determine the best scenario
