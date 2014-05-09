@@ -12,11 +12,11 @@ Bike
 	+float getGearRatio();
 	+float getMechEff();
 
-	+void setModel();	/* sets */
-	+void setWeight();
-	+void setGear();
-	+void setgearRatio();
-	+void setMechEff();
+	+void setModel(string Model);	/* sets */
+	+void setWeight(int Weight);
+	+void setGear(int Gears);
+	+void setgearRatio(vector<float>* GearRatios);
+	+void setMechEff(int MechEff);
 
 
 Cyclist
@@ -36,13 +36,13 @@ Cyclist
 	+int getWeight();
 	+int getV02max();
 	
-	+void setFirstname();	/* sets */
-	+void setLastName();
-	+void setGender();
-	+void setAge();
-	+void setHeight();
-	+void setWeight();
-	+void setV02max();
+	+void setFirstname(string FName);	/* sets */
+	+void setLastName(string LName);
+	+void setGender(string Gender);
+	+void setAge(int Age);
+	+void setHeight(int Height);
+	+void setWeight(int Weight);
+	+void setV02max(int V02max);
 
 
 Event
@@ -61,18 +61,18 @@ Event
 	+int getRaceDistance();
 	+int getAltitude();
 	+int getTemperature();
-	+int getBaromater();
+	+int getBarometer();
 	+int getHumidity();
 	+int getRiders();
 
-	+void setName();	/* sets */
-	+void setType();
-	+void setRaceDistance();
-	+void setAltitude();
-	+void setTemperature();
-	+void setBarometer();
-	+void setHumidity();
-	+void setRiders();
+	+void setName(string Name);	/* sets */
+	+void setType(int Type);
+	+void setRaceDistance(int Distance);
+	+void setAltitude(int Altitude);
+	+void setTemperature(int Temp);
+	+void setBarometer(int Barometer);
+	+void setHumidity(int Humidity);
+	+void setRiders(int Riders);
 
  
 BikeManage 			/* this class is used by the GUI to create of modify or delete bikes. */
