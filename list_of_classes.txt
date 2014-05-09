@@ -1,82 +1,150 @@
 Bike
- +constructors()
- -string model; 		/* model of bike */
- -int weight;		/* weight of bike - grams should be sufficient*/
- -int gears ;		/* number of gears on bike, 1 for track, up to 20 for road */
- -float gearRatio[gears];	/* array of gear ratios */
- -float mechanicalEfficiency; /* mech efficiency of bike - percentage*/
- +gets();
- +sets();
+	+Bike(string Model, int Weight, int Gears, vector<float>* gearRatio, float mechEff);		
+	-string model; 		/* model of bike */
+	-int weight;		/* weight of bike - grams should be sufficient*/
+	-int gears ;		/* number of gears on bike, 1 for track, up to 20 for road */
+	-vector<float> gearRatio;	/* vector of gear ratios */
+	-float mechEff; 	/* mech efficiency of bike - percentage*/
+
+	+string getModel();	/* gets */
+	+int getWeight();
+	+int getGears();
+	+float getGearRatio();
+	+float getMechEff();
+
+	+void setModel();	/* sets */
+	+void setWeight();
+	+void setGear();
+	+void setgearRatio();
+	+void setMechEff();
+
 
 Cyclist
- +constructors()
- -string firstName; 	/* Cyclist first name */
- -string lastName;  	/* Cyclist last name */
- -int height;	   	/* Cyclist height in cm */
- -int weight;		/* Cyclist weight in kg */
- -int v02max;		/* Cyclist maximal oxygen consumption */
- +gets();
- +set();
-
- 
-BikeManage
- BikeManage();
- +create(parameter);
- +edit(Bike* bike);
- +delete(Bike* bike);
- -vector <bike> Garage;
- 
-cyclistManage
- cyclistManage()
- +create(parameter);
- +edit(Cyclist* cyclist);
- +delete(Cyclist* cyclist);
- -vector <Cyclist> squad;
-
-eventManage
- +create(parameter);
- +edit(Event* event);
- +delete(Event* event);
- -vector <Event> events;
+	+Cyclist(string fName, stringlName, string Gender, int Age, int Height, int Weight, int V02max)		
+	-string firstName; 	/* Cyclist first name */
+	-string lastName;  	/* Cyclist last name */
+	-string gender;	  	/* Cyclist gender*/
+	-int age;		/* age in years */
+	-int height;	   	/* Cyclist height in cm */
+	-int weight;		/* Cyclist weight in kg */
+	-int v02max;		/* Cyclist maximal oxygen consumption */
+	
+	+string getFirstName(); /* gets */
+	+string getLastName();
+	+string getGender();
+	+int getHeight();
+	+int getWeight();
+	+int getV02max();
+	
+	+void setFirstname();	/* sets */
+	+void setLastName();
+	+void setGender();
+	+void setAge();
+	+void setHeight();
+	+void setWeight();
+	+void setV02max();
 
 
 Event
- string name;		/* Name of event */
- int type;		/* different numbers represent different event type, eg 0 for track individual, 1 for track team, 2 for road individual, 3 for road team */
- 	// Probably replace with an enum for best practice
- int raceDistance;	/* total race distance */
- int altitude;		/* altitude in metres */
- int temperature;	/* temperature in degrees Celsius */
- int barometer;		/* barometric pressure in hPa */
- int humidity;		/* humidity as percentage */
- int riders;		/* number of participants in event */
+	+Event(string Name, int Type, int RaceDist, int Alt, int Temp, int Baro, int Humidity, int Riders);
+	-string name;		/* Name of event */
+	-int type;		/* different numbers represent different event type, eg 0 for track individual, 1 for track team, 2 for road individual, 3 for road team */
+	-int raceDistance;	/* total race distance */
+	-int altitude;		/* altitude in metres */
+	-int temperature;	/* temperature in degrees Celsius */
+	-int barometer;		/* barometric pressure in hPa */
+	-int humidity;		/* humidity as percentage */
+	-int riders;		/* number of participants in event */
+
+	+string getName();	/* gets */
+	+int getType();
+	+int getRaceDistance();
+	+int getAltitude();
+	+int getTemperature();
+	+int getBaromater();
+	+int getHumidity();
+	+int getRiders();
+
+	+void setName();	/* sets */
+	+void setType();
+	+void setRaceDistance();
+	+void setAltitude();
+	+void setTemperature();
+	+void setBarometer();
+	+void setHumidity();
+	+void setRiders();
+
+ 
+BikeManage 			/* this class is used by the GUI to create of modify or delete bikes. */
+ 	+BikeManage();
+	+create(string Model, int Weight, int Gears, vector<float>* gearRatio, float mechEff);	/* Pushes new bike on to Garage vector */
+	+edit(Bike* bike);	
+	+delete(Bike* bike);	/* finds and deletes a bike from Garage vector */
+	-vector <bike> Garage;
+ 
+cyclistManage			/* this class is used by the GUI to create of modify or delete cyclists. */
+ 	+cyclistManage()
+ 	+create(string fName, stringlName, string Gender, int Age, int Height, int Weight, int V02max);
+ 	+edit(Cyclist* cyclist);
+ 	+delete(Cyclist* cyclist);
+  	-vector <Cyclist> squad;
+
+eventManage			/* this class is used by the GUI to create of modify or delete Events. */
+	+eventManage();
+	+create(string Name, int Type, int RaceDist, int Alt, int Temp, int Baro, int Humidity, int Riders);
+	+edit(Event* event);
+	+delete(Event* event);
+	-vector <Event> events;
+
+
+
 
 
 Simulation
- -Event event;
- -vector<Cyclist> team;
- -Bike bike;
- -Result result;
- -int powerInterval[][2];
- -int transitions[];
- +void setBike(Bike*);
- +void addCyclist(Cyclist*);
- +void removeCyclist(Cyclist*);
- +void setTransitions(int distance[]);
- +void set powerIntervals(int powerIntervals[][]);
- +void setEvent(Event*);
- -Bool isReady;
- -run();
- +simulate();
- +displayResult();
- 
+	+Simulation();
+	-Event event;		/* event to simulate */
+	-vector<Cyclist> team;	/* team of cyclists */
+	-Bike bike;		/* Assuming that the entire team rides the same model of bike */
+	-Result result;		/* result object can be used by the GUI to display results to screen */
+	-vector < vector<int> > powerInterval; /* 2 dimensional vector to store power interval info */
+	-vector <int> transitions;	/* transition timing information */
+	-Bool isReady;		/* Bool is used by simulate() to determine if all required parameters are entered, if bool is true then simualte will call run() */
 
+	+void setBike(Bike*);		/* selects bike from Garage */
+	+void addCyclist(Cyclist*); 	/* add Cyclist to team from vector squad */
+	+void removeCyclist(Cyclist*); 	/* remove cyclist from team */
+	+virtual void setTransitions();		/* GUI options determines what transition timing will be used */
+	+virtual void setPowerIntervals();	/* GUI options determines what power intervals will be used */
+	+void setEvent(Event*);		/* selects event from vector events */
+	+void simulate();		/* checks at all needed fields are filled, then calls run(), stores info in to result */
+	-Result run();			/* called by simulate() if isReady is true */
+	-void isFeasible() 		/* called by simulate() to see if any riders exceeded his/her energy potential using this strategy
+					   energy potential can be calculated using age, gender, weight, and V02max. If any rider exceeded
+					   his/her max potention then strategy is not feasible. */
+
+
+
+Optimization()			/* inherit from Simulation */
+	+Optimization();
+	-Result temp;
+	-int runNumber;			/* number of times optimize() will call run() with different values for transitions and powerIntervals */
+	+void setTransitions();		/* overloaded function that gets a range of values instead of a single value from GUI */
+	+void setPowerIntervals();	/* overloaded function that gets a range of values instead of a single value from GUI */
+	+void optimize();		/* instead of simulate(), randomly generate values for transitions and powerIntervals bounded by range set 
+					   from setTransitions() and setPowerInervals(), calls run() stores output in temp and compare to result
+					   if temp.getTime() < result.getTime() then result = temp */
+	
 
 Result
- result();
- -time
- -transitions
- -powerintervals
- -energy
- +gets();
+ 	+result(int Time, vector < vector<int> >* Transisitions, vector < vector<int> >* PowerIntervals, vector<int>* Energy, bool Feasible);
+	-int time;			/* time for cyclists in simulation to complete event */
+	-vector< vector<int> > transitions; 	/* 2 dimensional transition vector that was used in the simulation */
+	-vector< vector<int> > powerIntervals;	/* 2 dimensional powerInterval vector that was used in the simulation */
+	-vector <int> energy;			/* how much energy used by each rider as number of calories */
+	-bool feasible;			/* used by isFeasible() to indicate whether results is feasible */
 
+	+int getTime();
+	+vector< vector<int> > getTransitions();
+	+vector< vector<int> > getPowerIntervals();
+	+vector <int> getEnergy();
+	+bool getFeasible();
