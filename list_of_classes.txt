@@ -1,27 +1,49 @@
 Bike
- string model; 		/* model of bike */
- int weight;		/* weight of bike - grams should be sufficient*/
- int gears ;		/* number of gears on bike, 1 for track, up to 20 for road */
- float gearRatio[gears];	/* array of gear ratios */
- float mechanicalEfficiency; /* mech efficiency of bike - percentage*/
- 
+ +constructors()
+ -string model; 		/* model of bike */
+ -int weight;		/* weight of bike - grams should be sufficient*/
+ -int gears ;		/* number of gears on bike, 1 for track, up to 20 for road */
+ -float gearRatio[gears];	/* array of gear ratios */
+ -float mechanicalEfficiency; /* mech efficiency of bike - percentage*/
+ +gets();
+ +sets();
 
 Cyclist
- string firstName; 	/* Cyclist first name */
- string lastName;  	/* Cyclist last name */
- int height;	   	/* Cyclist height in cm */
- int weight;		/* Cyclist weight in kg */
- int v02max;		/* Cyclist maximal oxygen consumption */
-
-
-CyclistConfig
- Cyclist cyclist;
- Bike bike;
-
+ +constructors()
+ -string firstName; 	/* Cyclist first name */
+ -string lastName;  	/* Cyclist last name */
+ -int height;	   	/* Cyclist height in cm */
+ -int weight;		/* Cyclist weight in kg */
+ -int v02max;		/* Cyclist maximal oxygen consumption */
+ +gets();
+ +set();
 
 Team
- vector<CyclistConfig> members; /* Maximum size 9 - for a road cycling event */
- string teamName;
+ -vector<CyclistConfig> members; /* Maximum size 9 - for a road cycling event */
+ -bike teamBike;
+ addCyclist();
+ setBike();
+ 
+ 
+BikeManage
+ BikeManage();
+ +create(parameter);
+ +edit(Bike* bike);
+ +delete(Bike* bike);
+ -vector <bike> Garage;
+ 
+cyclistManage
+ cyclistManage()
+ +create(parameter);
+ +edit(Cyclist* cyclist);
+ +delete(Cyclist* cyclist);
+ -vector <Cyclist> squad;
+
+eventManage
+ +create(parameter);
+ +edit(Event* event);
+ +delete(Event* event);
+ -vector <Event> events;
 
 
 Event
@@ -37,13 +59,34 @@ Event
 
 
 Simulation
- Event event;
- Team team;
- Vector<strategy> strategy; /* List of strategies to run the simulation for */
- enum mode; /* Would define the type of variations to run simulation for - whether the system tries just each different rider starting first for each strategy, or if it tries each of the O(factorial) potential orderings etc */
-
+ -Event event;
+ -vector<Cyclist> team;
+ -Bike bike;
+ -Result result;
+ -int powerInterval[][2];
+ -int transitions[];
+ +void setBike(Bike*);
+ +void addCyclist(Cyclist*);
+ +void removeCyclist(Cyclist*);
+ +void setTransitions(int distance[]);
+ +void set powerIntervals(int powerIntervals[][]);
+ +void setEvent(Event*);
+ -Bool isReady;
+ -run();
+ +simulate();
+ +displayResult();
+ 
 
 Strategy
  File input; /* CSV file of times between each rider swapping position or swapping from high speed to cruising speed for individual? */
  enum type; /* Possibly support built in types as well, using parameter, e.g. could set to change every 30 seconds regardless without using an input file */
  int parameter;
+
+Result
+ result();
+ -time
+ -transitions
+ -powerintervals
+ -energy
+ +gets();
+
