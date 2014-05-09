@@ -18,12 +18,6 @@ Cyclist
  +gets();
  +set();
 
-Team
- -vector<CyclistConfig> members; /* Maximum size 9 - for a road cycling event */
- -bike teamBike;
- addCyclist();
- setBike();
- 
  
 BikeManage
  BikeManage();
@@ -77,10 +71,6 @@ Simulation
  +displayResult();
  
 
-Strategy
- File input; /* CSV file of times between each rider swapping position or swapping from high speed to cruising speed for individual? */
- enum type; /* Possibly support built in types as well, using parameter, e.g. could set to change every 30 seconds regardless without using an input file */
- int parameter;
 
 Result
  result();
