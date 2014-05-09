@@ -54,7 +54,6 @@ Event
 	-int temperature;	/* temperature in degrees Celsius */
 	-int barometer;		/* barometric pressure in hPa */
 	-int humidity;		/* humidity as percentage */
-	-int riders;		/* number of participants in event */
 
 	+string getName();	/* gets */
 	+int getType();
@@ -63,7 +62,6 @@ Event
 	+int getTemperature();
 	+int getBarometer();
 	+int getHumidity();
-	+int getRiders();
 
 	+void setName(string Name);	/* sets */
 	+void setType(int Type);
@@ -72,7 +70,6 @@ Event
 	+void setTemperature(int Temp);
 	+void setBarometer(int Barometer);
 	+void setHumidity(int Humidity);
-	+void setRiders(int Riders);
 
  
 BikeManage 			/* this class is used by the GUI to create of modify or delete bikes. */
