@@ -1,0 +1,22 @@
+Shaun
+ Class diagram
+ Sequence - Optimize(use3)
+ Use case 1
+ 
+Partrick
+ State - optimize
+ State - simulation
+ Sequence - Simulate(use 1)
+ Use case 2
+  
+Tim
+ Sequence - Create Cyclist(use1)
+ Sequence - Create Bike(use1)
+ Sequence - Create Event(use1)
+ Sequence - Add Cyclist(use2 and use 3)
+ Sequence - Add Bike(use2 and use 3)
+ Sequence - Add Bike(use2 and use 3)
+ Use case 3
+ 
+ 
+ Every diagram needs to have an accompanying exlaination of whats happening and any assumption we have made about the system.
