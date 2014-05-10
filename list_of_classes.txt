@@ -9,7 +9,7 @@ Bike
 	+string getModel();	/* gets */
 	+int getWeight();
 	+int getGears();
-	+float getGearRatio();
+	+vector<float> getGearRatio();
 	+float getMechEff();
 
 	+void setModel(string Model);	/* sets */
