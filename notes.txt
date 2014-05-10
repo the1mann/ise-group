@@ -1,0 +1,24 @@
+Assumptions
+The distances for each event will be manually entered since the tracks can vary between 250 and 330 meters.
+
+
+Number of cyclists in each team is checked by Simulate(), if number is more or less than regulation bool 
+isReady() is set to false and simulation will not run. The GUI should then indicate  that a parameter is incorrect.
+
+
+Strategy consists of Transitions and Power Intervals. These are entered in the GUI then stored in Simulation(), 
+transitions as a vector of integers and power intervals as a 2d vector. For optimization(), a range is entered 
+for each and a random number generator, bounded by the ranges specified will be used to set the transition and 
+interval times for each simulation. 
+
+
+Once a simulation or a single run inside optimization is complete, each class with try to determine whether a 
+strategy is feasible or not by comparing each Cyclist's maximum energy potential against the energy used in the 
+results. Max energy potential is calculated using age, gender, weight, height and v02max of each cyclist. 
+isFeasible() will check to make sure that the required amount of riders finished(did not exceed max energy) the race.
+Each run of the optimization simulation will generate a result. The result is checked for feasibility and discarded 
+is it isn't feasible then compared to the previous best result. If new result is faster and feasible, it overrides 
+the previous best, else it is discarded. 
+
+
+
