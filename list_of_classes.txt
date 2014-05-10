@@ -115,7 +115,7 @@ Simulation
 	+void setEvent(Event*);		/* selects event from vector events */
 	+void simulate();		/* checks at all needed fields are filled, then calls run(), stores info in to result */
 	-Result run();			/* called by simulate() if isReady is true */
-	-void isFeasible() 		/* called by simulate() to see if any riders exceeded his/her energy potential using this strategy
+	-bool isFeasible() 		/* called by simulate() to see if any riders exceeded his/her energy potential using this strategy
 					   energy potential can be calculated using age, gender, weight, and V02max. If any rider exceeded
 					   his/her max potention then strategy is not feasible. */
 	+Result getResult();	/* Returns results, mainly used to give results to GUI */
