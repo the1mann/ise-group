@@ -108,7 +108,6 @@ Simulation
 	-Result result;		/* result object can be used by the GUI to display results to screen */
 	-vector < vector<int> > powerInterval; /* 2 dimensional vector to store power interval info */
 	-vector <int> transitions;	/* transition timing information */
-	-Bool isReady;		/* Bool is used by simulate() to determine if all required parameters are entered, if bool is true then simualte will call run() */
 
 	+void setBike(Bike*);		/* selects bike from Garage */
 	+void addCyclist(Cyclist*); 	/* add Cyclist to team from vector squad */
@@ -116,12 +115,11 @@ Simulation
 	+virtual void setTransitions();		/* GUI options determines what transition timing will be used */
 	+virtual void setPowerIntervals();	/* GUI options determines what power intervals will be used */
 	+void setEvent(Event*);		/* selects event from vector events */
-	+void simulate();		/* checks at all needed fields are filled, then calls run(), stores info in to result */
-	-Result run();			/* called by simulate() if isReady is true */
-	-bool isFeasible() 		/* called by simulate() to see if any riders exceeded his/her energy potential using this strategy
+	+Result simulate();		/* checks at all needed fields are filled, then calls run(), stores info in to result */
+	+bool isReady();		/* Bool is used by simulate() to determine if all required parameters are entered, if bool is true then simualte will call run() */
+	+bool isFeasible() 		/* called by simulate() to see if any riders exceeded his/her energy potential using this strategy
 					   energy potential can be calculated using age, gender, weight, and V02max. If any rider exceeded
 					   his/her max potention then strategy is not feasible. */
-	+Result getResult();	/* Returns results, mainly used to give results to GUI */
 
 
 Optimization()			/* inherit from Simulation */
@@ -130,7 +128,7 @@ Optimization()			/* inherit from Simulation */
 	-int runNumber;			/* number of times optimize() will call run() with different values for transitions and powerIntervals */
 	+void setTransitions();		/* overloaded function that gets a range of values instead of a single value from GUI */
 	+void setPowerIntervals();	/* overloaded function that gets a range of values instead of a single value from GUI */
-	+void optimize();		/* instead of simulate(), randomly generate values for transitions and powerIntervals bounded by range set 
+	+Result optimize();		/* instead of simulate(), randomly generate values for transitions and powerIntervals bounded by range set 
 					   from setTransitions() and setPowerInervals(), calls run() stores output in temp and compare to result
 					   if temp.getTime() < result.getTime() then result = temp */
 	+void setRunNumber(int number); /* sets numbers of times to call run() */
