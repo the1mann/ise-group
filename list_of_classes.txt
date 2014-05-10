@@ -78,6 +78,8 @@ BikeManage 			/* this class is used by the GUI to create of modify or delete bik
 	+edit(Bike* bike);	
 	+delete(Bike* bike);	/* finds and deletes a bike from Garage vector */
 	-vector <bike> Garage;
+	+Bike getBike();
+	+vector<Bike> getGarage();
  
 cyclistManage			/* this class is used by the GUI to create of modify or delete cyclists. */
  	+cyclistManage()
@@ -85,6 +87,8 @@ cyclistManage			/* this class is used by the GUI to create of modify or delete c
  	+edit(Cyclist* cyclist);
  	+delete(Cyclist* cyclist);
   	-vector <Cyclist> squad;
+	+Cyclist getCyclist();
+	+vector<Cyclist> getSquad();
 
 eventManage			/* this class is used by the GUI to create of modify or delete Events. */
 	+eventManage();
@@ -92,9 +96,8 @@ eventManage			/* this class is used by the GUI to create of modify or delete Eve
 	+edit(Event* event);
 	+delete(Event* event);
 	-vector <Event> events;
-
-
-
+	+Event getEvent();
+	+vector<Event> getEvents();
 
 
 Simulation
