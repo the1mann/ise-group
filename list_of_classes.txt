@@ -118,7 +118,7 @@ Simulation
 	-void isFeasible() 		/* called by simulate() to see if any riders exceeded his/her energy potential using this strategy
 					   energy potential can be calculated using age, gender, weight, and V02max. If any rider exceeded
 					   his/her max potention then strategy is not feasible. */
-
+	+Result getResult();	/* Returns results, mainly used to give results to GUI */
 
 
 Optimization()			/* inherit from Simulation */
@@ -130,7 +130,9 @@ Optimization()			/* inherit from Simulation */
 	+void optimize();		/* instead of simulate(), randomly generate values for transitions and powerIntervals bounded by range set 
 					   from setTransitions() and setPowerInervals(), calls run() stores output in temp and compare to result
 					   if temp.getTime() < result.getTime() then result = temp */
-	
+	+void setRunNumber(int number); /* sets numbers of times to call run() */
+	+void randomTransitions();	/* randomly generate values from range of values declared from setTransitions(); */
+	+void randomPowerIntervals();     /* randomly generate values from range of values declared from setPowerIntervals(); */
 
 Result
  	+result(int Time, vector < vector<int> >* Transisitions, vector < vector<int> >* PowerIntervals, vector<int>* Energy, bool Feasible);
@@ -145,3 +147,4 @@ Result
 	+vector< vector<int> > getPowerIntervals();
 	+vector <int> getEnergy();
 	+bool getFeasible();
+	+void setFeasible();
