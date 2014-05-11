@@ -1,7 +1,13 @@
 Pursuit Cycling with 3 people 
-The coach has an pursuit cycling event coming up in the next few weeks and he wants to work out the best strategy for the event
+The coach has an pursuit cycling event coming up in the next few weeks and he wants to work out the optimal strategy for the event.
+He already has a squad of riders saved in the system and he will select 3 of them.
+He already has a garage of bikes to choose from.
+The event is already saved in the system from preivously.
 
-- Creates 3 cyclists
-- Create a new bike
-- Create the pursuit cycling event
-- Run the simulation randomly in order to determine the best strategy
+
+	- Enters how many simulations the optimization program will run.
+	- Set event
+	- Set Bike
+	- Chooses 3 cyclists
+	- Sets the optimization parameters.
+	- Run the optimization which returns the best feasbile strategy.

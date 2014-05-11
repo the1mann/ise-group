@@ -10,6 +10,7 @@ He will do the following
 	- Select the Cyclist
 	- Select the Bike
 	- Select the Event
+	- Enter strategy
 
 	- Run Simulation
 	- View Results.
