@@ -1,1 +1,12 @@
-The coach thinks of a brand new strategy while in the shower. Quickly he jumps onto his computer and adds the team event and bike, enters a new strategy and runs one simulation to see whether it's feasible.
+The coach thinks of a brand new strategy while in the shower. 
+Quickly he jumps onto his computer and adds the team event and bike, 
+enters a new strategy and runs one simulation to see whether it's feasible.
+
+This is assuming Events, Bikes, and Cyclists have all been previously entered in to the system previously.
+
+He does the following:
+	-set event
+	-set bike
+	-selects 3 riders
+	-enters strategy
+	-runs simulation

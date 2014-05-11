@@ -2,7 +2,7 @@ Pursuit Cycling with 3 people
 The coach has an pursuit cycling event coming up in the next few weeks and he wants to work out the optimal strategy for the event.
 He already has a squad of riders saved in the system and he will select 3 of them.
 He already has a garage of bikes to choose from.
-The event is already saved in the system from preivously.
+The event is already saved in the system from previously.
 
 
 	- Enters how many simulations the optimization program will run.

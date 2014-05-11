@@ -1,6 +1,7 @@
 Use case 1
 
 The coach is using the program for the very first time. 
+The system is currently empty of data.
 
 He will do the following
 	- Create a Cyclist
