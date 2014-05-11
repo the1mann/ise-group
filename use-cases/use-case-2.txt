@@ -1,10 +1,19 @@
+Use case 2
+
 Pursuit Cycling with 3 people 
 The coach has an pursuit cycling event coming up in the next few weeks and he wants to work out the optimal strategy for the event.
-He already has a squad of riders saved in the system and he will select 3 of them.
+He already has a squad of riders saved in the system.
 He already has a garage of bikes to choose from.
 The event is already saved in the system from previously.
 
+He will tick the optimization check box on the GUI
+He will enter the number of simulations that the optimization program will call(call it value n).
+He will select the event, the bike and 3 riders.
+He will set a range of strategies to try.
+The optimzation function will return the result that is feasible with the lowest time.
 
+
+He will do the following:
 	- Enters how many simulations the optimization program will run.
 	- Set event
 	- Set Bike

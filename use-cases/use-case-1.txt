@@ -1,7 +1,12 @@
 Use case 1
 
-The coach is using the program for the very first time. 
-The system is currently empty of data.
+This use case represents the coach is using the program for the very first time. 
+The system starts off with no entries for Events, Cyclists, or Bikes.
+The coach will create one of each of these objects.
+Then he will go to the simulation page and select the newly made objects from the GUI.
+He will then stipulate a strategy and run the simulation.
+When simulation is complete, the results will be displayed on the screen.
+The feasibility of the strategy will be highlighted.(See mock GUI for example)
 
 He will do the following
 	- Create a Cyclist
